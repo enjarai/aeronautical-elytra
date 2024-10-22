@@ -17,7 +17,7 @@ val mod = ModData()
 
 val loader = loom.platform.get().name.lowercase()
 val isFabric = loader == "fabric"
-val mcVersion = stonecutter.current.project.substringBeforeLast('-')
+val mcVersion = property("mod.mc_version").toString() // stonecutter.current.project.substringBeforeLast('-')
 val mcDep = property("mod.mc_dep").toString()
 val isSnapshot = hasProperty("env.snapshot")
 

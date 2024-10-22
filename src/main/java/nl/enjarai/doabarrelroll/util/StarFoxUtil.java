@@ -2,6 +2,7 @@ package nl.enjarai.doabarrelroll.util;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -52,7 +53,7 @@ public class StarFoxUtil {
             int x = scaledWidth / 2 - 75;
             int y = scaledHeight - 90;
             int texture = barrelRollTimer % 2 == 0 ? 1 : 2;
-            context.drawTexture(texture == 1 ? barrelRollTexture1 : barrelRollTexture2,
+            context.drawTexture(RenderLayer::getGuiTextured, texture == 1 ? barrelRollTexture1 : barrelRollTexture2,
                     x, y, 0, 0, 160, 160, 160, 160);
         }
     }

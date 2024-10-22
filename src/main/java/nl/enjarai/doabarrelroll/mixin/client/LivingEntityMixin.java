@@ -26,11 +26,11 @@ public abstract class LivingEntityMixin extends Entity {
 
     @SuppressWarnings("ConstantConditions")
     @ModifyArg(
-            method = "travel",
+            method = "travelGliding",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/entity/LivingEntity;setVelocity(Lnet/minecraft/util/math/Vec3d;)V",
-                    ordinal = 6
+                    ordinal = 0
             )
     )
     private Vec3d doABarrelRoll$wrapElytraVelocity(Vec3d original) {

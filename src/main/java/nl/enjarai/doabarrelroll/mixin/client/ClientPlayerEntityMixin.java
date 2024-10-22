@@ -30,6 +30,6 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
             MixinHooks.thirdJump = false;
         }
 
-        MixinHooks.wasJumping = input.jumping;
+        MixinHooks.wasJumping = input.playerInput.jump();
     }
 }

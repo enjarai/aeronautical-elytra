@@ -86,7 +86,7 @@ public class DoABarrelRollClient {
         if (ModConfig.INSTANCE.getDisableWhenSubmerged() && player.isSubmergedInWater()) {
             return false;
         }
-        return player.isFallFlying();
+        return player.isGliding();
     }
 
     public static boolean isConnectedToRealms() {

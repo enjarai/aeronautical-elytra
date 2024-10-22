@@ -22,7 +22,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
 
     @SuppressWarnings("ConstantConditions")
     @Inject(
-            method = "checkFallFlying()Z",
+            method = "checkGliding()Z",
             at = @At("HEAD"),
             cancellable = true
     )
