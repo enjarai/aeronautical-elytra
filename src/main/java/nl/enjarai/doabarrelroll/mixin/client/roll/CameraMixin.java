@@ -79,7 +79,7 @@ public abstract class CameraMixin implements RollCamera {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/render/Camera;setRotation(FF)V",
-                    ordinal = 0
+                    ordinal = 1
             )
     )
     private boolean doABarrelRoll$addRoll1(Camera thiz, float yaw, float pitch, @Share("tickDelta") LocalFloatRef tickDelta) {
@@ -96,7 +96,7 @@ public abstract class CameraMixin implements RollCamera {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/render/Camera;setRotation(FF)V",
-                    ordinal = 1
+                    ordinal = 2
             )
     )
     private boolean doABarrelRoll$addRoll2(Camera thiz, float yaw, float pitch) {
@@ -109,7 +109,7 @@ public abstract class CameraMixin implements RollCamera {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/render/Camera;setRotation(FF)V",
-                    ordinal = 2
+                    ordinal = 3
             )
     )
     private boolean doABarrelRoll$addRoll3(Camera thiz, float yaw, float pitch) {

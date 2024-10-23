@@ -40,7 +40,7 @@ public class DoABarrelRoll {
 
     public static boolean checkPermission(ServerPlayNetworkHandler handler, String permission, int operatorLevel) {
         //? if fabric {
-        return Permissions.check(handler.getPlayer(), permission, operatorLevel);
+        return Permissions.check(handler.getPlayer().getCommandSource(), permission, operatorLevel);
         //?} else
         /*return ModPermissions.resolve(handler.getPlayer(), permission, operatorLevel);*/
     }
