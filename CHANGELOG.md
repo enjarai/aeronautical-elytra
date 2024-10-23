@@ -1,1 +1,1 @@
-- Removed broken compatibility with Camera Overhaul.
+- Updated to 1.21.2.
