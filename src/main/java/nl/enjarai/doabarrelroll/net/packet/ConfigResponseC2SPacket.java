@@ -10,7 +10,7 @@ public record ConfigResponseC2SPacket(int protocolVersion, boolean success) impl
     public static final Id<ConfigResponseC2SPacket> PACKET_ID = new Id<>(DoABarrelRoll.id("config_response"));
     public static final PacketCodec<ByteBuf, ConfigResponseC2SPacket> PACKET_CODEC = PacketCodec.tuple(
             PacketCodecs.INTEGER, ConfigResponseC2SPacket::protocolVersion,
-            PacketCodecs.BOOL, ConfigResponseC2SPacket::success,
+            PacketCodecs.BOOLEAN, ConfigResponseC2SPacket::success,
             ConfigResponseC2SPacket::new
     );
 

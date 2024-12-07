@@ -13,7 +13,7 @@ public record ConfigSyncS2CPacket(int protocolVersion, LimitedModConfigServer ap
     public static final PacketCodec<PacketByteBuf, ConfigSyncS2CPacket> PACKET_CODEC = PacketCodec.tuple(
             PacketCodecs.INTEGER, ConfigSyncS2CPacket::protocolVersion,
             LimitedModConfigServer.getPacketCodec(), ConfigSyncS2CPacket::applicableConfig,
-            PacketCodecs.BOOL, ConfigSyncS2CPacket::isLimited,
+            PacketCodecs.BOOLEAN, ConfigSyncS2CPacket::isLimited,
             ModConfigServer.PACKET_CODEC, ConfigSyncS2CPacket::fullConfig,
             ConfigSyncS2CPacket::new
     );

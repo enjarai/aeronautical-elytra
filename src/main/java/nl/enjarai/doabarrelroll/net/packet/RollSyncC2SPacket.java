@@ -9,7 +9,7 @@ import nl.enjarai.doabarrelroll.DoABarrelRoll;
 public record RollSyncC2SPacket(boolean rolling, float roll) implements CustomPayload {
     public static final Id<RollSyncC2SPacket> PACKET_ID = new Id<>(DoABarrelRoll.id("roll_sync"));
     public static final PacketCodec<ByteBuf, RollSyncC2SPacket> PACKET_CODEC = PacketCodec.tuple(
-            PacketCodecs.BOOL, RollSyncC2SPacket::rolling,
+            PacketCodecs.BOOLEAN, RollSyncC2SPacket::rolling,
             PacketCodecs.FLOAT, RollSyncC2SPacket::roll,
             RollSyncC2SPacket::new
     );

@@ -27,9 +27,9 @@ public record ModConfigServer(boolean allowThrusting,
             KineticDamage.CODEC.optionalFieldOf("kineticDamage", DEFAULT.kineticDamage()).forGetter(ModConfigServer::kineticDamage)
     ).apply(instance, ModConfigServer::new));
     public static final PacketCodec<ByteBuf, ModConfigServer> PACKET_CODEC = PacketCodec.tuple(
-            PacketCodecs.BOOL, ModConfigServer::allowThrusting,
-            PacketCodecs.BOOL, ModConfigServer::forceEnabled,
-            PacketCodecs.BOOL, ModConfigServer::forceInstalled,
+            PacketCodecs.BOOLEAN, ModConfigServer::allowThrusting,
+            PacketCodecs.BOOLEAN, ModConfigServer::forceEnabled,
+            PacketCodecs.BOOLEAN, ModConfigServer::forceInstalled,
             PacketCodecs.INTEGER, ModConfigServer::installedTimeout,
             KineticDamage.PACKET_CODEC, ModConfigServer::kineticDamage,
             ModConfigServer::new

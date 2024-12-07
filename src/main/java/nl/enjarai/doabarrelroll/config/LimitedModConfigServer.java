@@ -18,8 +18,8 @@ public interface LimitedModConfigServer {
 
     static PacketCodec<PacketByteBuf, LimitedModConfigServer> getPacketCodec() {
         return PacketCodec.tuple(
-                PacketCodecs.BOOL, LimitedModConfigServer::allowThrusting,
-                PacketCodecs.BOOL, LimitedModConfigServer::forceEnabled,
+                PacketCodecs.BOOLEAN, LimitedModConfigServer::allowThrusting,
+                PacketCodecs.BOOLEAN, LimitedModConfigServer::forceEnabled,
                 Impl::new
         );
     }

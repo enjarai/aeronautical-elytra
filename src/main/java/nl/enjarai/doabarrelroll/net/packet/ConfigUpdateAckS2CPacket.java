@@ -10,7 +10,7 @@ public record ConfigUpdateAckS2CPacket(int protocolVersion, boolean success) imp
     public static final Id<ConfigUpdateAckS2CPacket> PACKET_ID = new Id<>(DoABarrelRoll.id("config_update_ack"));
     public static final PacketCodec<ByteBuf, ConfigUpdateAckS2CPacket> PACKET_CODEC = PacketCodec.tuple(
             PacketCodecs.INTEGER, ConfigUpdateAckS2CPacket::protocolVersion,
-            PacketCodecs.BOOL, ConfigUpdateAckS2CPacket::success,
+            PacketCodecs.BOOLEAN, ConfigUpdateAckS2CPacket::success,
             ConfigUpdateAckS2CPacket::new
     );
 
