@@ -55,7 +55,7 @@ public abstract class LivingEntityMixin extends Entity {
         }
 
         double maxSpeed = ModConfig.INSTANCE.getMaxThrust();
-        double speedIncrease = Math.max(maxSpeed - velocity.length(), 0) / maxSpeed * throttleSign;
+        double speedIncrease = Math.max(maxSpeed - velocity.length() * Math.signum(rotation.dotProduct(velocity) * throttleSign), 0) / maxSpeed * throttleSign;
         double acceleration = ModConfig.INSTANCE.getThrustAcceleration() * speedIncrease;
 
         return original.add(
