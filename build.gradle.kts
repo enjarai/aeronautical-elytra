@@ -171,9 +171,11 @@ tasks.processResources {
         "fml" to if (loader == "neoforge") "1" else "45",
     )
 
-    filesMatching("fabric.mod.json") { expand(map) }
-    filesMatching("META-INF/mods.toml") { expand(map) }
-    filesMatching("META-INF/neoforge.mods.toml") { expand(map) }
+    fun FileCopyDetails.expandOrExclude(expand: Boolean, map: Map<String, String>): Any = if (expand) expand(map) else exclude()
+
+    filesMatching("fabric.mod.json") { expandOrExclude(loader == "fabric", map) }
+    filesMatching("META-INF/mods.toml") { expandOrExclude(loader == "forge", map) }
+    filesMatching("META-INF/neoforge.mods.toml") { expandOrExclude(loader == "neoforge", map) }
 }
 
 yamlang {
