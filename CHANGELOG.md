@@ -1,1 +1,1 @@
-- Removed broken compatibility with Camera Overhaul.
+- Removed unneeded fabric.mod.json from neoforge version, and mods.toml from fabric version. (Thanks @Octol1ttle)
